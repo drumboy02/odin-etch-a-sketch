@@ -7,12 +7,12 @@ function createGrid(numberRows, numberColumns) {
     for (let i = 0; i < numberRows; i++) {
         const gridRow = document.createElement("div");
         gridRow.classList = "grid-row";
-        gridRow.id = `row-${i}`
+        gridRow.id = `row-${i}`;
 
         for (let j = 0; j < numberColumns; j++) {    
             const gridSquare = document.createElement("div");
             gridSquare.classList = "grid-square";
-            gridSquare.id = `row-${i}-square-${j}`
+            gridSquare.id = `row-${i}-square-${j}`;
             gridSquare.style.visibility = "hidden";
             gridRow.appendChild(gridSquare);
         }
@@ -33,7 +33,13 @@ function etch() {
 }
 
 function numberOfSquares() {
-    const number = prompt("How many squares per side?");
+    const number = Number(prompt("How many squares per side?"));
+
+    if (number < 1 || number > 99 || !number || number === NaN) {
+        alert("Choose a number between 1 and 99");
+        console.log("typeof: " + typeof(number));
+        return;
+    }
     console.log("number: " + number);
     return number;
 }

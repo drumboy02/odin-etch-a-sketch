@@ -36,6 +36,8 @@ body {
 
 .btn-squares {
     width: 384px;
-    padding: 1%;
+    padding: 0.4em;
     margin-top: 1.5%;
+    border: 2px solid black;
+    font-family: Verdana, sans-serif;
 }
