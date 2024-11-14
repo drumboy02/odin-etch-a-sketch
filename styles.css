@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    background: gray;
+    margin: 0 auto;
+}
+
+.grid-square-div {
+    display: flex;
+    flex-direction: column;
+    background: darkgray;
+    border: 52px ridge red;
+    border-radius: 12px;
+    padding: 1%;
+    margin-top: 2%;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-square {
+    display: flex;
+    background: black;
+    border: 2px inset darkslategray;
+    height: 1.4em;
+    width: 1.8em;
+    margin: 1px;
+}
