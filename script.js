@@ -18,13 +18,20 @@ function createGrid(numberRows, numberColumns) {
     }
 }
 
-function sixteenBySixteen() {
-    createGrid(16, 16)
-
-    const rows = document.querySelectorAll(".grid-row");
+function etch() {
     const squares = document.querySelectorAll(".grid-square");
 
     squares.forEach(square => square.style.visibility = "visible");
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.background = "black";
+        });
+    });
+}
+
+function sixteenBySixteen() {
+    createGrid(16, 16);
+    etch();
 }
 
 sixteenBySixteen();

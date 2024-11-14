@@ -21,9 +21,13 @@ body {
 
 .grid-square {
     display: flex;
-    background: black;
+    background: gray;
     border: 2px inset darkslategray;
     height: 1.4em;
     width: 1.8em;
     margin: 1px;
+}
+
+.etch {
+    background: black;
 }
