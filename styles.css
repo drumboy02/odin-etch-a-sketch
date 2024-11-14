@@ -1,6 +1,8 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: gray;
     margin: 0 auto;
 }
@@ -23,11 +25,17 @@ body {
     display: flex;
     background: gray;
     border: 2px inset darkslategray;
-    height: 1.4em;
-    width: 1.8em;
+    height: 24px;
+    width: 24px;
     margin: 1px;
 }
 
 .etch {
     background: black;
+}
+
+.btn-squares {
+    width: 384px;
+    padding: 1%;
+    margin-top: 1.5%;
 }

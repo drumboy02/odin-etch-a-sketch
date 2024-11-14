@@ -1,4 +1,7 @@
 const gridSquareContainer = document.querySelector(".grid-square-div");
+const btnSquares = document.querySelector(".btn-squares");
+
+btnSquares.addEventListener("click", () => numberOfSquares());
 
 function createGrid(numberRows, numberColumns) {
     for (let i = 0; i < numberRows; i++) {
@@ -20,13 +23,19 @@ function createGrid(numberRows, numberColumns) {
 
 function etch() {
     const squares = document.querySelectorAll(".grid-square");
-
     squares.forEach(square => square.style.visibility = "visible");
+
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
             square.style.background = "black";
         });
     });
+}
+
+function numberOfSquares() {
+    const number = prompt("How many squares per side?");
+    console.log("number: " + number);
+    return number;
 }
 
 function sixteenBySixteen() {
