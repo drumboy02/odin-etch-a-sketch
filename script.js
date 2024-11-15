@@ -15,7 +15,7 @@ function createGrid(numberRows=16, numberColumns=16) {
             const gridSquare = document.createElement("div");
             gridSquare.classList = "grid-square";
             gridSquare.id = `row-${i}-square-${j}`;
-            gridSquare.style.visibility = "hidden";
+
             gridRow.appendChild(gridSquare);
         }
 
@@ -25,9 +25,7 @@ function createGrid(numberRows=16, numberColumns=16) {
 
 function etch(color="black") {
     // set grid squares to change color when mouse hovers
-
     const squares = document.querySelectorAll(".grid-square");
-    squares.forEach(square => square.style.visibility = "visible");
 
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
@@ -37,28 +35,32 @@ function etch(color="black") {
 }
 
 function numberOfSquares() {
+    let gridRows = document.querySelectorAll(".grid-row");
+    let gridSquares = document.querySelectorAll(".grid-square");
+
     // prompt user for # of squares
     const number = Number(prompt("How many squares per side?"));
-
+        
     if (number < 1 || number > 100 || !number || number === NaN) {
         alert("Choose a number between 1 and 100");
         return;
     }
 
-    // get current height/width of each grid square
-    const gridRows = document.querySelectorAll(".grid-row");
-    const gridSquares = document.querySelectorAll(".grid-square");
+    // get h/w of first grid square, calculate new h/w
+    const sqWidth = gridSquares[0].clientWidth;
+    const sqHeight = gridSquares[0].clientHeight;
+    const newWidth = (sqWidth * 16) / number;
+    const newHeight = (sqHeight * 16) / number;
 
-    gridSquares.forEach(square => {
-        const sWidth = square.clientWidth;
-        const sHeight = square.clientHeight;
+    // clear the grid and create new grid with number of squares
+    gridRows.forEach(row => gridSquareContainer.removeChild(row));
+    createGrid(number, number);
+    etch();
 
-        console.log("square width16: " + (sWidth * 16) / number);
-        console.log("square height16: " + (sHeight * 16) / number);
-        // clear the grid and call createGrid with new square sizes
+    // get new Nodelist and adjust square sizes
+    gridSquares = document.querySelectorAll(".grid-square") 
+    console.log(gridSquares);
 
-    });
-    
     return;
 }
 
