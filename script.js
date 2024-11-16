@@ -79,4 +79,24 @@ function sixteenBySixteen() {
     etch();
 }
 
+
+function randomizeRGB() {
+    const squares = document.querySelectorAll(".grid-square");
+    // randomize RGB values with each interaction
+
+    function randNum() {
+        let num = Math.floor(Math.random() * 255);
+        console.log("0-255: " + num);
+        return num;
+    }
+
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            randNum();
+        });
+    })
+
+}
+
 sixteenBySixteen();
+randomizeRGB()
