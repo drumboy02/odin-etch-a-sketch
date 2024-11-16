@@ -1,9 +1,11 @@
 const gridSquareContainer = document.querySelector(".grid-square-div");
 const btnSquares = document.querySelector(".btn-squares");
+let gRows = 16;
+let gCols = 16;
 
 btnSquares.addEventListener("click", () => numberOfSquares());
 
-function createGrid(numberRows=16, numberColumns=16) {
+function createGrid(numberRows=gRows, numberColumns=gCols) {
     // create grid of squares with (nRows, nColumns)
 
     for (let i = 0; i < numberRows; i++) {
@@ -20,6 +22,10 @@ function createGrid(numberRows=16, numberColumns=16) {
         }
 
         gridSquareContainer.appendChild(gridRow);
+
+        // set global vars in case default wasn't used
+        gRows = numberRows;
+        gCols = numberColumns;
     }
 }
 
@@ -49,17 +55,20 @@ function numberOfSquares() {
     // get h/w of first grid square, calculate new h/w
     const sqWidth = gridSquares[0].clientWidth;
     const sqHeight = gridSquares[0].clientHeight;
-    const newWidth = (sqWidth * 16) / number;
-    const newHeight = (sqHeight * 16) / number;
+    const newWidth = (sqWidth * gRows) / number;
+    const newHeight = (sqHeight * gCols) / number;
 
     // clear the grid and create new grid with number of squares
     gridRows.forEach(row => gridSquareContainer.removeChild(row));
     createGrid(number, number);
     etch();
 
-    // get new Nodelist and adjust square sizes
+    // get new Nodelist and adjust square size
     gridSquares = document.querySelectorAll(".grid-square") 
-    console.log(gridSquares);
+    gridSquares.forEach(square => {
+        square.style.width = `${String(newWidth)}px`;
+        square.style.height = `${String(newHeight)}px`;
+    })
 
     return;
 }

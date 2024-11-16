@@ -10,10 +10,10 @@ body {
 .grid-square-div {
     display: flex;
     flex-direction: column;
-    background: darkgray;
+    background: white;
     border: 52px ridge red;
     border-radius: 12px;
-    padding: 1%;
+    padding: 6px;
     margin-top: 2%;
 }
 
@@ -24,10 +24,11 @@ body {
 .grid-square {
     display: flex;
     background: gray;
-    border: 2px inset darkslategray;
+    /*
+    border: 2px inset darkgray;
+    */
     height: 24px;
     width: 24px;
-    margin: 1px;
 }
 
 .etch {
