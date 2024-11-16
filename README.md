@@ -4,4 +4,6 @@ TOP Project: Etch-a-Sketch
 
 This is an Etch-a-Sketch made for The Odin Project, built with Javascript and CSS to demonstrate DOM manipulation skills.
 
-Use the mouse to draw inside the sketchpad. Clicking the button will prompt the user to enter a number representing the area of the square grid.
+Use the mouse to draw inside the sketchpad. 
+Clicking the top button prompts the user to enter a number representing how many squares per row/column.
+Click the bottom button to randomize to randomize the colors of each square.
