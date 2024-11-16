@@ -35,10 +35,15 @@ body {
     background: black;
 }
 
-.btn-squares {
+.btn-squares, .btn-RGB {
     width: 384px;
     padding: 0.4em;
     margin-top: 1.5%;
     border: 2px solid black;
     font-family: Verdana, sans-serif;
+}
+
+.btn-squares:hover, .btn-RGB:hover {
+    background: red;
+    color: white;
 }

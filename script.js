@@ -1,9 +1,11 @@
 const gridSquareContainer = document.querySelector(".grid-square-div");
 const btnSquares = document.querySelector(".btn-squares");
+const btnRGB = document.querySelector(".btn-RGB");
 let gRows = 16;
 let gCols = 16;
 
 btnSquares.addEventListener("click", () => numberOfSquares());
+btnRGB.addEventListener("click", () => randomizeRGB());
 
 function createGrid(numberRows=gRows, numberColumns=gCols) {
     // create grid of squares with (nRows, nColumns)
@@ -86,17 +88,16 @@ function randomizeRGB() {
 
     function randNum() {
         let num = Math.floor(Math.random() * 255);
-        console.log("0-255: " + num);
         return num;
     }
 
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            randNum();
+            let color = `rgb(${randNum()}, ${randNum()}, ${randNum()})`
+            square.style.backgroundColor = color;
         });
     })
 
 }
 
 sixteenBySixteen();
-randomizeRGB()
