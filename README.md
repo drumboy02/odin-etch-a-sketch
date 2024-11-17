@@ -6,4 +6,6 @@ This is an Etch-a-Sketch made for The Odin Project, built with Javascript and CS
 
 Use the mouse to draw inside the sketchpad. 
 Clicking the top button prompts the user to enter a number representing how many squares per row/column.
-Click the bottom button to randomize to randomize the colors of each square.
+
+Click the left bottom button to randomize the colors of each square.
+Click the right bottom button for a progressive darkening effect.
