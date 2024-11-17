@@ -14,7 +14,7 @@ body {
     border: 52px ridge red;
     border-radius: 12px;
     padding: 6px;
-    margin-top: 2%;
+    margin-top: 8px;
 }
 
 .grid-row {
@@ -35,7 +35,7 @@ body {
     background: black;
 }
 
-.btn-squares, .btn-RGB {
+.btn-squares {
     width: 384px;
     padding: 0.4em;
     margin-top: 1.5%;
@@ -43,7 +43,20 @@ body {
     font-family: Verdana, sans-serif;
 }
 
-.btn-squares:hover, .btn-RGB:hover {
+.btn-extra-div {
+    display: flex;
+}
+
+.btn-RGB, .btn-darken {
+    width: 192px;
+    padding: 0.4em;
+    margin-top: 1.5%;
+    border: 2px solid black;
+    font-family: Verdana, sans-serif;
+}
+
+.btn-squares:hover, .btn-RGB:hover, .btn-darken:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }

@@ -1,11 +1,14 @@
 const gridSquareContainer = document.querySelector(".grid-square-div");
 const btnSquares = document.querySelector(".btn-squares");
 const btnRGB = document.querySelector(".btn-RGB");
+const btnDarken = document.querySelector(".btn-darken");
+
 let gRows = 16;
 let gCols = 16;
 
 btnSquares.addEventListener("click", () => numberOfSquares());
 btnRGB.addEventListener("click", () => randomizeRGB());
+btnDarken.addEventListener("click", () => darken());
 
 function createGrid(numberRows=gRows, numberColumns=gCols) {
     // create grid of squares with (nRows, nColumns)
@@ -98,6 +101,27 @@ function randomizeRGB() {
         });
     })
 
+}
+
+function darken() {
+    const squares = document.querySelectorAll(".grid-square");
+    gridSquareContainer.addEventListener(
+        "mouseleave", () => count = 0
+    );
+     // increase opacity by 10% with each interaction
+     
+    let count = 0;
+
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            square.style.opacity = `${count}%`;
+            count += 10;
+            /*
+            return count === 100 ?
+            count = 0 : count += 10;
+            */
+        })
+    })
 }
 
 sixteenBySixteen();
